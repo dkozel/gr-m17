@@ -114,6 +114,14 @@ endif(APPLE)
 # Find gnuradio build dependencies
 ########################################################################
 find_package(Doxygen)
+find_package(m17cxx REQUIRED)
+if(${m17cxx_FOUND})
+    message(STATUS "Found m17cxx")
+    message(STATUS "  M17 Library version: " ${m17cxx_VERSION})
+    message(STATUS "  M17 Library location: " ${m17cxx_DIR})
+else(${m17cxx_FOUND})
+    message(FATAL_ERROR "Could not locate m17cxx")
+endif()
 
 ########################################################################
 # PyBind11 Related

@@ -21,7 +21,7 @@ if(NOT m17_sources)
 endif(NOT m17_sources)
 
 add_library(gnuradio-m17 SHARED ${m17_sources})
-target_link_libraries(gnuradio-m17 gnuradio::gnuradio-runtime)
+target_link_libraries(gnuradio-m17 gnuradio::gnuradio-runtime m17cxx)
 target_include_directories(gnuradio-m17
     PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/../include>
     PUBLIC $<INSTALL_INTERFACE:include>
