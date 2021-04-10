@@ -29,7 +29,7 @@ include(GrPybind)
 ########################################################################
 
 list(APPEND m17_python_files
-    python_bindings.cc)
+    encoder_python.cc python_bindings.cc)
 
 GR_PYBIND_MAKE_OOT(m17 
    ../..

@@ -11,5 +11,5 @@
 ########################################################################
 install(FILES
     api.h
-    DESTINATION include/m17
+    encoder.h DESTINATION include/m17
 )

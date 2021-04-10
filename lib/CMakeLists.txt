@@ -12,6 +12,7 @@
 include(GrPlatform) #define LIB_SUFFIX
 
 list(APPEND m17_sources
+    encoder_impl.cc
 )
 
 set(m17_sources "${m17_sources}" PARENT_SCOPE)

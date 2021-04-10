@@ -7,5 +7,5 @@
 #
 
 install(FILES
-    DESTINATION share/gnuradio/grc/blocks
+    m17_encoder.block.yml DESTINATION share/gnuradio/grc/blocks
 )
