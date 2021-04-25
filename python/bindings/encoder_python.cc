@@ -14,7 +14,7 @@
 /* BINDTOOL_GEN_AUTOMATIC(0)                                                       */
 /* BINDTOOL_USE_PYGCCXML(0)                                                        */
 /* BINDTOOL_HEADER_FILE(encoder.h)                                        */
-/* BINDTOOL_HEADER_FILE_HASH(767da40fde767605fc5464749d4e9e6c)                     */
+/* BINDTOOL_HEADER_FILE_HASH(c8bdee962730f724ddc498b739bbbca7)                     */
 /***********************************************************************************/
 
 #include <pybind11/complex.h>
@@ -37,11 +37,27 @@ void bind_encoder(py::module& m)
         std::shared_ptr<encoder>>(m, "encoder", D(encoder))
 
         .def(py::init(&encoder::make),
+           py::arg("source_address"),
+           py::arg("destination_address"),
            D(encoder,make)
         )
         
 
 
+
+
+        
+        .def("set_destination",&encoder::set_destination,       
+            py::arg("dest_addr"),
+            D(encoder,set_destination)
+        )
+
+
+        
+        .def("set_source",&encoder::set_source,       
+            py::arg("source_addr"),
+            D(encoder,set_source)
+        )
 
         ;
 

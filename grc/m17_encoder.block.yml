@@ -1,10 +1,17 @@
 id: m17_encoder
-label: encoder
-category: '[m17]'
+label: M17 Encoder
+category: '[M17]'
 
 templates:
   imports: import m17
   make: m17.encoder()
+  callbacks:
+  - set_source(${source})
+  - set_destination(${destination})
+
+asserts:
+- ${len(source) < 10}
+- ${len(destination) < 10}
 
 #  Make one 'parameters' list entry for every parameter you want settable from the GUI.
 #     Keys include:
@@ -12,13 +19,14 @@ templates:
 #     * label (label shown in the GUI)
 #     * dtype (e.g. int, float, complex, byte, short, xxx_vector, ...)
 parameters:
-- id: parametername_replace_me
-  label: FIX ME:
+- id: source
+  label: Source Address
   dtype: string
-  value: You need to fill in your grc/m17_encoder.block.yaml
-#- id: ...
-#  label: ...
-#  dtype: ...
+  default: 
+- id: destination 
+  label: Destination Address 
+  dtype: string
+  default: Broadcast
 
 #  Make one 'inputs' list entry per input and one 'outputs' list entry per output.
 #  Keys include:
@@ -28,18 +36,14 @@ parameters:
 #      * vlen (optional - data stream vector length. Default is 1)
 #      * optional (optional - set to 1 for optional inputs. Default is 0)
 inputs:
-#- label: ...
-#  domain: ...
-#  dtype: ...
-#  vlen: ...
-#  optional: ...
+- label: Audio
+  domain: stream
+  dtype: float
 
 outputs:
-#- label: ...
-#  domain: ...
-#  dtype: ...
-#  vlen: ...
-#  optional: ...
+- label: Bitstream
+  domain: stream
+  dtype: byte 
 
 #  'file_format' specifies the version of the GRC yml format used in the file
 #  and should usually not be changed.

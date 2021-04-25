@@ -10,6 +10,7 @@
 
 #include <gnuradio/sync_block.h>
 #include <m17/api.h>
+#include <string>
 
 namespace gr {
 namespace m17 {
@@ -32,7 +33,10 @@ public:
      * class. m17::encoder::make is the public interface for
      * creating new instances.
      */
-    static sptr make();
+    static sptr make(const std::string source_address, const std::string destination_address);
+
+    void set_destination(const std::string dest_addr);
+    void set_source(const std::string source_addr);
 };
 
 } // namespace m17

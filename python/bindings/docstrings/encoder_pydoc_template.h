@@ -24,4 +24,10 @@
 
  static const char *__doc_gr_m17_encoder_make = R"doc()doc";
 
+
+ static const char *__doc_gr_m17_encoder_set_destination = R"doc()doc";
+
+
+ static const char *__doc_gr_m17_encoder_set_source = R"doc()doc";
+
   
